@@ -17,7 +17,9 @@ $(function () {
                             mode = 'qrencode';
                         }
                     }
+                    mode = 'qrencode';
                     if (mode == 'qrdecode') {
+                        console.info("浏览器开发22");
                         outputobj.show();
                         result = "Decoding...";
                         $("#qrcode").hide();
@@ -44,6 +46,7 @@ $(function () {
                             }
                         });
                     } else {
+                        console.info("浏览器开发11");
                         outputobj.hide();
                         $("#qrcode").html('').show();
                         $("#qrcode").qrcode({
@@ -60,7 +63,7 @@ $(function () {
                         //var aizhanurl = 'http://www.anooc.com/' + domain + '/';
                         var anoocUrl='http://www.anooc.com/';
 
-                        $('<div class="row btn-alimama" id="extend-url"></div>').prependTo("#qrcode");
+                       /* $('<div class="row btn-alimama" id="extend-url"></div>').prependTo("#qrcode");
                         $('<div class="col-xs-3"><a class="btn btn-info btn-block" href="' + baiduurl + '" target="_blank">百度收录</a></div>').appendTo("#extend-url");
                         $('<div class="col-xs-3"><a class="btn btn-info btn-block" href="' + anoocUrl + '" target="_blank">官方网站</a></div>').appendTo("#extend-url");
                         if (url.match(/taobao|tmall/)) {
@@ -68,7 +71,7 @@ $(function () {
                             var highurl = 'http://pub.alimama.com/promo/item/channel/index.htm?q=' + encodeURIComponent(url);
                             $('<div class="col-xs-3"><a class="btn btn-danger btn-block" href="' + normalurl + '" target="_blank">通用推广</a></div>').appendTo("#extend-url");
                             $('<div class="col-xs-3"><a class="btn btn-danger btn-block" href="' + highurl + '" target="_blank">高佣推广</a></div>').appendTo("#extend-url");
-                        }
+                        }*/
                     }
                     break;
                 case "url":
@@ -265,8 +268,8 @@ $(function () {
                     break;
             }
         } catch (e) {
-            console.log(e);
-            result = "An error occurred:" + e.message;
+            //console.log(e);
+            //result = "An error occurred:" + e.message;
         }
         outputobj.val(result);
     };
@@ -337,12 +340,13 @@ $(function () {
         rebuild();
     });
 
-    var pastetext = paste();
+});
+   /* var pastetext = paste();
 
     chrome.tabs.query({
-        currentWindow: true,
-        active: true
-    },
+                    currentWindow: true,
+                    active: true
+                },
             function (tab) {
                 url = tab[0].url;
                 $("input[name=type][value=qrcode]").attr("checked", "checked");
@@ -361,4 +365,4 @@ $(function () {
                 $("input[name=type]:checked").click();
             });
 
-});
+});*/
