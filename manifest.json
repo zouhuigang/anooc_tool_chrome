@@ -23,6 +23,7 @@
         "webRequest",
         "webRequestBlocking",
         "contextMenus",
+        "notifications",
         "http://*/*",
         "https://*/*",
         "<all_urls>",
