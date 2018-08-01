@@ -85,6 +85,8 @@ function genericOnClick(info, tab) {
         window.open("https://www.anooc.com/ts/ip","_blank");
     }else if(info.menuItemId == "md5"){
         window.open("https://www.anooc.com/ts/md5","_blank");
+    }else if(info.menuItemId == "jsonFormat"){
+        window.open("https://www.anooc.com/ts/json","_blank");
     }
     
   }
@@ -112,6 +114,8 @@ function genericOnClick(info, tab) {
         {"id":"ip","title": "IP查询", "parentId": parent, "onclick": genericOnClick});
   var child4 = chrome.contextMenus.create(
             {"id":"md5","title": "md5加密解密", "parentId": parent, "onclick": genericOnClick});
+  var child5 = chrome.contextMenus.create(
+        {"id":"jsonFormat","title": "Json格式化", "parentId": parent, "onclick": genericOnClick});
 
 //版本信息
 var parent = chrome.contextMenus.create({"title": "关于AnoocTool"});
@@ -126,7 +130,7 @@ var child4 = chrome.contextMenus.create(
 
 
 //=================通知=======================
-function showNofity(body){
+ /* function showNofity(body){
     var time = /(..)(:..)/.exec(new Date());     // The prettyprinted time.
     var hour = time[1] % 12 || 12;               // The prettyprinted hour.
     var period = time[1] < 12 ? 'a.m.' : 'p.m.'; // The period of the day.
@@ -144,7 +148,7 @@ function showNofity(body){
   }
   
   // Test for notification support.
-  if (window.Notification) {
+if (window.Notification) {
     // While activated, show notifications at the display frequency.
     if (JSON.parse(localStorage.isActivated)) { showNofity("改写代码了，同学"); }
   
@@ -162,4 +166,4 @@ function showNofity(body){
       }
     }, 60000);
   }
-
+*/
